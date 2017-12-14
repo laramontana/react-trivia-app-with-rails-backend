@@ -4,7 +4,7 @@ import fetch from 'isomorphic-fetch';
 export function fetchRecords() {
   return function(dispatch){
     dispatch({type: 'LOADING'})
-    return fetch(`/api/records`)
+    return fetch("/api/records")
       .then(res => {
         return res.json()
       }).then(records => {
@@ -14,19 +14,23 @@ export function fetchRecords() {
 }
 
 
-export function addRecord(rec) {
+export function addRecord(rec, history) {
   return function(dispatch){
     dispatch({type: 'LOADING'})
     return fetch(`/api/records`, {
-      method: 'POST',
-      body: rec,
+      credentials: "include",
+      method: "POST",
+      headers: {
+        'Accept': "application/json",
+        'Content-Type': "application/json",
+      },
+      body: JSON.stringify(rec)
     })
       .then(res => {
-        debugger
         return res.json()
       }).then(record => {
-        debugger
         dispatch({type: 'ADD_RECORD', payload: record})
+        history.push('/records')
     })
   }
 }

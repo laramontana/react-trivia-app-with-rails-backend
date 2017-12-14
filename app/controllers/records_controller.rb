@@ -8,19 +8,13 @@ class RecordsController < ApplicationController
   end
 
   def create
-    binding.pry
-    @record = Record.new(record_params)
-    render(
-        status: 200,
-        json: @record
-      )
-
+    record = Record.new(record_params)
+    record.save ? (render json: record) : (render json: {message: record.errors}, status: 400)
   end
-
 
   private
     def record_params
-      params.permit(:user_name, :score, :date)
+      params.require(:record).permit(:user_name, :score, :date)
     end
 
 end

@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Record.create(
     [
-      { user_name: 'Liza', score: 400, date: '2017-12-14 10:00:00' },
-      { user_name: 'Anton', score: 200, date: '2017-12-14 12:12:17' },
-      { user_name: 'John', score: 300, date: '2017-12-14 14:31:17' }
+      { user_name: 'Liza', score: "400", date: '2017-12-14' },
+      { user_name: 'Anton', score: "200", date: '2017-12-14' },
+      { user_name: 'John', score: "300", date: '2017-12-14' }
     ]
   )

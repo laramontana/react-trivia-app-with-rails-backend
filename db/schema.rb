@@ -14,8 +14,8 @@ ActiveRecord::Schema.define(version: 20171214112656) do
 
   create_table "records", force: :cascade do |t|
     t.string "user_name"
-    t.integer "score"
-    t.datetime "date"
+    t.string "score"
+    t.string "date"
   end
 
 end

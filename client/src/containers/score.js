@@ -14,22 +14,22 @@ class Score extends Component {
     let yyyy = today.getFullYear();
 
     if(dd<10) {
-        dd = '0'+dd
+        dd = "0"+dd
     }
     if(mm<10) {
-        mm = '0'+mm
+        mm = "0"+mm
     }
-    today = yyyy + '/' + mm + '/' + dd;
+    today = yyyy + "/" + mm + "/" + dd;
 
     this.state = {
       score: 0,
-      user_name: '',
+      user_name: "",
       date: today
     }
   }
 
   handleClick = () => {
-    if (this.state.score<500) {
+    if (this.state.score<800) {
       this.setState({
         score: this.state.score+100
       })
@@ -38,7 +38,8 @@ class Score extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addRecord(this.state)
+    console.log(this.props)
+    this.props.addRecord({record: this.state}, this.props.history)
   }
 
   handleChange = (e) => {
