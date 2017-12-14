@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { addRecord } from '../actions/recordsActions';
 
 class Score extends Component {
 
   constructor() {
     super()
+    this.handleSubmit = this.handleSubmit.bind(this);
 
     let today = new Date();
     let dd = today.getDate();
@@ -59,4 +62,4 @@ class Score extends Component {
   }
 }
 
-export default Score;
+export default connect(null, {addRecord})(Score);

@@ -17,11 +17,15 @@ export function fetchRecords() {
 export function addRecord(rec) {
   return function(dispatch){
     dispatch({type: 'LOADING'})
-    return fetch(`/api/records`, {method: "POST"})
+    return fetch(`/api/records`, {
+      method: 'POST',
+      body: rec,
+    })
       .then(res => {
         debugger
         return res.json()
       }).then(record => {
+        debugger
         dispatch({type: 'ADD_RECORD', payload: record})
     })
   }
