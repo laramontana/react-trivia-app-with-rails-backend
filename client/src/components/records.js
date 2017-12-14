@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchRecords } from '../actions/recordsActions';
-import CategoryQuestion from '../containers/categoryQuestion';
-import Score from '../containers/score';
-
 import '../App.css';
 
 class Records extends Component {
@@ -13,11 +10,11 @@ class Records extends Component {
   }
 
   render() {
-    const {records} = this.props
+    const showRecords = this.props.records.map(record=><div><p>{record.user_name} - score: {record.score} ({record.date.slice(0, 10)})</p></div>)
     return (
       <div className="App">
         <h4 className="App-title">Records</h4>
-
+          {showRecords}
       </div>
     );
   }
