@@ -10,7 +10,7 @@ class Records extends Component {
   }
 
   render() {
-    const showRecords = this.props.records.map(record=><div><p>{record.user_name} - score: {record.score} ({record.date.slice(0, 10)})</p></div>)
+    const showRecords = this.props.records.map(record=><div key={record.id}><p>{record.user_name} - score: {record.score} ({record.date.slice(0, 10)})</p></div>)
     return (
       <div className="App">
         <h4 className="App-title">Records</h4>
