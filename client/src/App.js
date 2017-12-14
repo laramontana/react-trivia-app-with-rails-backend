@@ -8,6 +8,7 @@ import NavBar from './components/NavBar';
 import Quiz from './containers/quiz';
 import Categories from './components/categories';
 import About from './components/about';
+import Records from './components/records';
 import './App.css';
 
 class App extends Component {
@@ -26,6 +27,7 @@ class App extends Component {
             <Route exact path="/" component={Quiz} />
             <Route path="/categories" component={Categories} />
             <Route path="/about" component={About} />
+            <Route path="/records" component={Records} />
           </div>
         </Router>
       </div>

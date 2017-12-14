@@ -30,6 +30,14 @@ const NavBar = () => {
       }}
       >Categories</NavLink>
       <NavLink
+      to="/records"
+      exact
+      style={link}
+      activeStyle={{
+        background: 'Blue'
+      }}
+      >Records</NavLink>
+      <NavLink
       to="/about"
       exact
       style={link}
