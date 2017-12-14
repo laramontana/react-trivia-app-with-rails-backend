@@ -34,3 +34,6 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/laramo
     LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
     OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
     WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+[front-end only](https://github.com/laramontana/react-trivia-app)
