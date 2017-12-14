@@ -29,7 +29,7 @@ class Score extends Component {
   }
 
   handleClick = () => {
-    if (this.state.score<800) {
+    if (this.state.score<500) {
       this.setState({
         score: this.state.score+100
       })

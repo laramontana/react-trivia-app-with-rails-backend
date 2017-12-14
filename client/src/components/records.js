@@ -18,8 +18,7 @@ class Records extends Component {
         return -1
       } else {return 0}
     }
-    const records = this.props.records
-    const sortedRecords = records.sort(sortRecords)
+    const sortedRecords = this.props.records.sort(sortRecords)
     const showRecords = sortedRecords.map(record=><div key={record.id}><p>{record.user_name} - score: {record.score} ({record.date})</p></div>)
 
     return (
