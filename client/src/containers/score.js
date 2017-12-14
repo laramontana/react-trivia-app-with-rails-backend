@@ -19,23 +19,23 @@ class Score extends Component {
     today = yyyy + '/' + mm + '/' + dd;
 
     this.state = {
-      total: 0,
+      score: 0,
       user_name: '',
       date: today
     }
   }
 
   handleClick = () => {
-    if (this.state.total<500) {
+    if (this.state.score<500) {
       this.setState({
-        total: this.state.total+100
+        score: this.state.score+100
       })
     }
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addRecord()
+    this.props.addRecord(this.state)
   }
 
   handleChange = (e) => {
@@ -45,7 +45,7 @@ class Score extends Component {
   render() {
     return (
       <div>
-        <h1>Your score: {this.state.total}</h1>
+        <h1>Your score: {this.state.score}</h1>
         <form onSubmit={this.handleSubmit}>
           <label>
             Name:
